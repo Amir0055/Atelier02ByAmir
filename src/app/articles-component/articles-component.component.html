@@ -1,0 +1,21 @@
+<div>
+    <h2>{{titre}}</h2>
+    
+    <input [(ngModel)]="i" style="margin-left: 20px;"    value="{{i}}" />
+    <div   *ngFor="let p of Articles | slice:0:i">
+        <div [ngStyle]="{'color': p.categorie=='Education'? 'Blue' : 'Black'}" *ngIf="p.categorie!='Travail'">
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{p.titre}}</h5>
+              <p class="card-text">Auteur :      {{p.auteur}}</p>
+              <p class="card-text">Date :    {{p.date}}</p>
+              <p class="card-text">Contenu :    {{p.contenu}}</p>
+               
+               
+            </div>
+          </div>
+        </div>
+     
+
+</div>

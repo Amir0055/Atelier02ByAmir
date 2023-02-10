@@ -1,0 +1,36 @@
+<!--<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>-->
+
+  <input type="text" [(ngModel)]="ent" >
+<button class="btn btn-primary"  (click)="affichage(ent)">cherche</button>
+<table border="2">
+    <tr>
+<div class="container"  *ngFor="let i of ListeEmploi">
+<th>
+    
+  <div class="card" style="width: 18rem;">
+        <img src="../assets/character.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{i.titre}}</h5>
+          <p class="card-text">{{i.entreprise}}</p>
+          <button class="btn btn-primary" [disabled]="i.etat" >Postuler</button>
+        </div>
+      </div>
+</th>
+</div>
+<td>
+<h2>le nombre des offres d’emploi non clôturées ={{nb}}</h2>
+<button class="btn btn-primary" (click)="Bilan()">Bilan</button>
+<br>
+
+</td>
+</tr>
+</table>
+
+
+
+
